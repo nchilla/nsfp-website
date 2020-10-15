@@ -70,7 +70,7 @@ body{
 .imgwrap{
   grid-column: 4 / 12;
   background-color: var(--background);
-  padding-bottom:20px;
+  padding-bottom:40px;
 }
 .imgwrap img{
   width:100%;
