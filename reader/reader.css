@@ -13,6 +13,7 @@ body{
   background-color: var(--background);
 }
 .sticky{
+  pointer-events: none;
   position:absolute;
   width:100%;
   top:0px;
@@ -34,6 +35,7 @@ body{
   top:0;
 }
 .sticky > div{
+  pointer-events: all;
   /* position: -webkit-sticky;
   position:sticky;
   top:100px; */
@@ -41,8 +43,10 @@ body{
 .sticky > p{
   grid-column: 5 / 11;
   z-index:200;
+  position:relative;
   background-color: var(--background);
   padding-bottom:20px;
+  pointer-events: all;
 }
 
 
@@ -62,4 +66,12 @@ body{
 .content-zone{
   background-color: var(--background);
   grid-column: 5 / 11;
+}
+.imgwrap{
+  grid-column: 4 / 12;
+  background-color: var(--background);
+  padding-bottom:20px;
+}
+.imgwrap img{
+  width:100%;
 }
