@@ -15,15 +15,17 @@ body{
 .sticky{
   position:absolute;
   width:100%;
-  top:0;
+  top:0px;
   min-height:200vh;
   overflow: visible;
 }
 .grid{
   display:grid;
-  grid-gap:10px;
+  gap: 0px 10px;
   grid-template-columns:var(--omargin) repeat(3, minmax(0, 1fr)) repeat(6,100px) repeat(3, minmax(0, 1fr)) var(--omargin);
-  grid-template-rows:var(--topmargin) minmax(0, 1fr) 10px;
+  grid-template-rows: repeat(12,minmax(min-content, max-content));
+  /* grid-template-rows: repeat(auto-fill, minmax(0, 1fr)); */
+  /* grid-template-rows:minmax(0, 1fr) 10px; */
 }
 
 
@@ -32,11 +34,16 @@ body{
   top:0;
 }
 .sticky > div{
-  position: -webkit-sticky;
+  /* position: -webkit-sticky;
   position:sticky;
-  top:100px;
+  top:100px; */
 }
-
+.sticky > p{
+  grid-column: 5 / 11;
+  z-index:200;
+  background-color: var(--background);
+  padding-bottom:20px;
+}
 
 
 .scroll .lede-wrap{
@@ -44,17 +51,15 @@ body{
 }
 
 .lede-wrap{
+  position:sticky;
+  top:100px;
+  padding-bottom:40px;
+  z-index:-5;
+  margin-top:100px;
+  /* grid-row-start:2; */
   /* margin-top:100px; */
 }
-.article-content{
+.content-zone{
   background-color: var(--background);
   grid-column: 5 / 11;
 }
-
-
-/* .page-grid{
-  display:grid;
-  grid-gap:10px;
-  grid-template-columns:var(--omargin) repeat(12, minmax(0, 1fr)) var(--omargin);
-  grid-template-rows:var(--topmargin) minmax(0, 1fr) 10px;
-} */
