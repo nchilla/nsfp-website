@@ -47,6 +47,23 @@ body{
   background-color: var(--background);
   padding-bottom:20px;
   pointer-events: all;
+  /* border-bottom:1px solid white; */
+}
+.sticky > blockquote{
+  grid-column: 5 / 11;
+  z-index:200;
+  position:relative;
+  background-color: var(--background);
+  padding-bottom:20px;
+  pointer-events: all;
+}
+
+.opinion-test h1{
+  display:inline;
+  position:absolute;
+  left:-20px;
+  top:-4px;
+  color:black;
 }
 
 

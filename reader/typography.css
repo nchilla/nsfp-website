@@ -37,3 +37,17 @@ p{
   font-size: 1.9rem;
   line-height: 33px;
 }
+blockquote span{
+  font-family: halyard-text, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2.5rem;
+  line-height: 3.3rem;
+  background-color: transparent;
+  background-image: linear-gradient(to left,var(--highlight),var(--highlight));
+  background-size: 120% .6em;
+  background-repeat: no-repeat;
+  background-position: 0 140%;
+  /* padding-bottom:10px; */
+  /* border-bottom:12px solid var(--highlight); */
+}
