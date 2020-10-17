@@ -54,12 +54,13 @@ blockquote span{
 
 @media(max-width:650px){
   h1{
-    font-size: 2.6rem;
+    font-size: 2.8rem;
     line-height: 3rem;
   }
   h2{
     font-size: 1.8rem;
     line-height: 2.5rem;
+    margin-bottom:var(--spacer);
   }
   blockquote span{
     font-size: 2rem;
@@ -70,7 +71,10 @@ blockquote span{
     line-height: 2.2rem;
   }
   p{
-    font-size: 1.6rem;
-    line-height: 2.6rem;
+    font-size: 1.7rem;
+    line-height: 2.8rem;
+  }
+  a{
+    padding-bottom:2px;
   }
 }

@@ -105,8 +105,12 @@ body{
     background-color: var(--background);
     grid-column: 2 / 14;
   }
+  .lede-wrap{
+    padding-bottom: 20px;
+  }
   .imgwrap{
     grid-column: 1 / 15;
+    padding-bottom: 20px;
   }
   .imgwrap img{
     margin-bottom:10px;
@@ -118,10 +122,13 @@ body{
 @media(max-width:600px){
   :root{
     --topmargin:75px;
-    --omargin:20px;
+    --omargin:10px;
   }
   .opinion-test h1{
-    left:-17px;
-    top:-7px;
+    left:0px;
+    top:-6px;
+  }
+  .opinion-test{
+    padding-left:20px;
   }
 }
