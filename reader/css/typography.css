@@ -60,6 +60,12 @@ blockquote span{
   /* padding-bottom:10px; */
   /* border-bottom:12px solid var(--highlight); */
 }
+.hanging-quote{
+  position:absolute;
+  left:-14px;
+  top:1px;
+  background-image:none;
+}
 
 @media(max-width:650px){
   h1{
@@ -75,6 +81,9 @@ blockquote span{
     font-size: 2rem;
     line-height: 2.7rem;
     background-position: 0 132%;
+  }
+  .hanging-quote{
+    left:-10px;
   }
   span{
     font-size: 1.5rem;
