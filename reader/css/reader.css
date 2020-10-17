@@ -88,12 +88,12 @@ body{
   grid-column: 5 / 11;
 }
 
-.imgwrap{
+.imgwrap-large{
   grid-column: 4 / 12;
   background-color: var(--background);
   padding-bottom:40px;
 }
-.imgwrap img{
+.imgwrap-large img{
   width:100%;
 }
 
@@ -105,21 +105,21 @@ body{
     background-color: var(--background);
     grid-column: 2 / 14;
   }
-  .lede-wrap{
-    padding-bottom: 20px;
-  }
-  .imgwrap{
+  .imgwrap-large{
     grid-column: 1 / 15;
     padding-bottom: 20px;
   }
-  .imgwrap img{
+  .imgwrap-large img{
     margin-bottom:10px;
   }
-  .imgwrap span{
+  .imgwrap-large span{
     margin-left:calc(var(--omargin) + 10px);
   }
 }
 @media(max-width:600px){
+  .lede-wrap{
+    padding-bottom: 30px;
+  }
   :root{
     --topmargin:75px;
     --omargin:10px;
