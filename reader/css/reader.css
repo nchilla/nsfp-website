@@ -1,9 +1,10 @@
 :root{
   --highlight:#FFE200;
   --spacer:1.5rem;
-  --omargin:20px;
-  --topmargin:200px;
+  --omargin:40px;
+  --topmargin:100px;
   --background:white;
+  --content-column:100px;
 }
 
 html{
@@ -12,7 +13,7 @@ html{
 body{
   background-color: var(--background);
 }
-.sticky{
+.content-wrap{
   pointer-events: none;
   position:absolute;
   width:100%;
@@ -23,48 +24,49 @@ body{
 .grid{
   display:grid;
   gap: 0px 10px;
-  grid-template-columns:var(--omargin) repeat(3, minmax(0, 1fr)) repeat(6,100px) repeat(3, minmax(0, 1fr)) var(--omargin);
+  grid-template-columns:var(--omargin) repeat(3, minmax(0, 1fr)) repeat(6,var(--content-column)) repeat(3, minmax(0, 1fr)) var(--omargin);
   grid-template-rows: repeat(12,minmax(min-content, max-content));
   /* grid-template-rows: repeat(auto-fill, minmax(0, 1fr)); */
   /* grid-template-rows:minmax(0, 1fr) 10px; */
 }
 
-
 .fixed{
   position:absolute;
   top:0;
 }
-.sticky > div{
+.content-wrap > div{
   pointer-events: all;
   /* position: -webkit-sticky;
   position:sticky;
   top:100px; */
 }
-.sticky > p{
-  grid-column: 5 / 11;
-  z-index:200;
-  position:relative;
-  background-color: var(--background);
-  padding-bottom:20px;
-  pointer-events: all;
-  /* border-bottom:1px solid white; */
+.content-wrap > p{
+  transition: background-color 0.5s;
 }
-.sticky > blockquote{
-  grid-column: 5 / 11;
+.content-wrap > p, blockquote{
   z-index:200;
   position:relative;
-  background-color: var(--background);
+
   padding-bottom:20px;
   pointer-events: all;
 }
 
+.content-wrap > blockquote{
+  padding-bottom:calc(var(--spacer) * 2);
+  cursor:pointer;
+}
+
+.opinion-test{
+  position:relative;
+}
 .opinion-test h1{
   display:inline;
   position:absolute;
-  left:-20px;
-  top:-4px;
+  left:-25px;
+  top:-7px;
   color:black;
 }
+
 
 
 .scroll .lede-wrap{
@@ -73,17 +75,19 @@ body{
 
 .lede-wrap{
   position:sticky;
-  top:100px;
+  top:var(--topmargin);
   padding-bottom:40px;
   z-index:-5;
-  margin-top:100px;
+  margin-top:var(--topmargin);
   /* grid-row-start:2; */
   /* margin-top:100px; */
 }
-.content-zone{
+
+.content-wrap > .content-zone,p, blockquote{
   background-color: var(--background);
   grid-column: 5 / 11;
 }
+
 .imgwrap{
   grid-column: 4 / 12;
   background-color: var(--background);
@@ -91,4 +95,33 @@ body{
 }
 .imgwrap img{
   width:100%;
+}
+
+@media(max-width:800px){
+  :root{
+    --content-column:minmax(0, 1fr);
+  }
+  .content-wrap > .content-zone,p, blockquote{
+    background-color: var(--background);
+    grid-column: 2 / 14;
+  }
+  .imgwrap{
+    grid-column: 1 / 15;
+  }
+  .imgwrap img{
+    margin-bottom:10px;
+  }
+  .imgwrap span{
+    margin-left:calc(var(--omargin) + 10px);
+  }
+}
+@media(max-width:600px){
+  :root{
+    --topmargin:75px;
+    --omargin:20px;
+  }
+  .opinion-test h1{
+    left:-17px;
+    top:-7px;
+  }
 }
