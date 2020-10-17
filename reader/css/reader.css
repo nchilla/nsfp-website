@@ -25,9 +25,15 @@ body{
   top:0px;
 }
 .fixed{
+  height:100%;
   position:fixed;
   z-index:200;
+  overflow:visible;
+  padding-left:var(--omargin);
+  padding-top:calc(var(--spacer) * 2);
+  pointer-events: none;
 }
+
 .grid{
   display:grid;
   gap: 0px 10px;
@@ -37,16 +43,31 @@ body{
   /* grid-template-rows:minmax(0, 1fr) 10px; */
 }
 
-.banner{
-  grid-column: 2 / 14;
-  height:50px;
-  margin-top:calc(var(--spacer) * 2);
+#logo{
+  position:relative;
+  left:0px;
+  transition:left 0.3s;
+  z-index:50;
+  display:inline-block;
+  vertical-align: top;
+  margin-left:5px;
+  margin-top:3px;
 }
+
+.banner{
+  overflow:hidden;
+}
+
+
 .hamburger{
-  height:100%;
+  display:inline-block;
+  height:50px;
   width:80px;
   background-color: var(--highlight);
   cursor:pointer;
+  position:relative;
+  z-index:100;
+  pointer-events: all;
 }
 .hamburger svg{
   width:100%;
@@ -138,6 +159,9 @@ body{
   .imgwrap-large span{
     margin-left:calc(var(--omargin) + 10px);
   }
+  .fixed{
+    padding-left:calc(var(--omargin) + 10px);
+  }
 }
 @media(max-width:600px){
   .lede-wrap{
@@ -154,10 +178,11 @@ body{
   .opinion-test{
     padding-left:20px;
   }
-  .banner{
-    height:40px;
+  #logo{
+    margin-top:2px;
   }
   .hamburger{
+    height:40px;
     width:60px;
   }
 }

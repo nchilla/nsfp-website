@@ -1,5 +1,10 @@
+var scrollingDown=false;
+
+
+
 function startUp(){
   pullQuoteDemo();
+  logoScroll();
 }
 
 
@@ -23,6 +28,16 @@ function pullQuoteDemo(){
       // setTimeout(function(){source.style.backgroundColor='white';},400)
   })
 
+}
+
+function logoScroll(){
+  window.addEventListener('scroll',function(e){
+    if(window.scrollY>100){
+      document.querySelector('#logo').style.left='-300px';
+    }else{
+      document.querySelector('#logo').style.left='0px';
+    }
+  })
 }
 
 
