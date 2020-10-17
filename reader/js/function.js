@@ -1,10 +1,7 @@
-var scrollingDown=false;
-
-
-
 function startUp(){
   pullQuoteDemo();
-  logoScroll();
+  logoScrollDemo();
+  readNewPieceDemo();
 }
 
 
@@ -30,7 +27,7 @@ function pullQuoteDemo(){
 
 }
 
-function logoScroll(){
+function logoScrollDemo(){
   window.addEventListener('scroll',function(e){
     if(window.scrollY>100){
       document.querySelector('#logo').style.left='-300px';
@@ -40,7 +37,29 @@ function logoScroll(){
   })
 }
 
+function readNewPieceDemo(){
+  document.querySelector('#readmore').addEventListener('click',function(){
+    //display the article content
+    document.querySelectorAll('.article2').forEach((item, i) => {
+      item.style.display='block';
+      item.style.opacity='1';
+    });
+    //get rid of the preview cover
+    document.querySelector('.preview-cover').style.opacity='0';
+    document.querySelector('.preview-cover').style.pointerEvents='none';
 
+    //scroll the new article up
+    var ledeRect=document.querySelector('#lede2').getBoundingClientRect();
+    var ledeDist=ledeRect.top;
+    var root = getComputedStyle(document.documentElement);
+    var topmargin=root.getPropertyValue('--topmargin').slice(0,3);
+    window.scrollBy({
+      top: ledeDist-topmargin,
+      left: 0,
+      behavior: 'smooth'
+    });
+  })
+}
 
 
 
