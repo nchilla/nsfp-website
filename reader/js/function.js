@@ -19,10 +19,6 @@ function pullQuoteDemo(){
         left: 0,
         behavior: 'smooth'
       });
-      // source.scrollIntoView({behavior:'smooth',block:'center',inline:'nearest'});
-
-      // source.style.backgroundColor='var(--highlight)';
-      // setTimeout(function(){source.style.backgroundColor='white';},400)
   })
 
 }

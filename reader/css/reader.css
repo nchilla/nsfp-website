@@ -130,14 +130,16 @@ body{
 }
 .opinion-test{
   position:relative;
+  margin-bottom: 2px;
+  display: inline-block;
 }
-.opinion-test h1{
+/* .opinion-test h1{
   display:inline;
   position:absolute;
   left:-25px;
   top:-7px;
   color:black;
-}
+} */
 
 /* article preview stuff --------*/
 .article2{
@@ -201,13 +203,13 @@ body{
     --topmargin:100px;
     --omargin:10px;
   }
-  .opinion-test h1{
+  /* .opinion-test h1{
     left:0px;
     top:-6px;
-  }
-  .opinion-test{
+  } */
+  /* .opinion-test{
     padding-left:20px;
-  }
+  } */
   #logo{
     margin-top:2px;
   }
