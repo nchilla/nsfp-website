@@ -14,9 +14,9 @@ The live blog is, well, live [here](https://www.newschoolfreepress.com/covid-19/
 
 The live blog is built as a custom single page (page-19929.php) in Wordpress. It has three sections, which our edited in different areas:
 
-**Live Updates** uses a custom post type added through functions.php. Look for the `<create_post_wp_covid()>` and `<add_action( 'init', 'create_post_wp_covid' );>` functions.
+**Live Updates** uses a custom post type added through functions.php. Look for the `create_post_wp_covid()` and `add_action( 'init', 'create_post_wp_covid' );` functions.
 
-**Our Coverage** pulls from regular posts that have the `<c19-our-coverage>` tag.
+**Our Coverage** pulls from regular posts that have the `c19-our-coverage` tag.
 
 **Resources** pull directly from the Live Blog page content editor in Pages
 
