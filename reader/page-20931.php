@@ -5,9 +5,9 @@
     <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1">
     <title>An "Intentional Pause”: The Scholar Strike Brings Questions of Justice and Performativity to Campus</title>
     <!-- stylesheets -->
-    <link rel="stylesheet" href="css-custom/clearstyle.css">
-    <link rel="stylesheet" href="css-custom/reader.css">
-    <link rel="stylesheet" href="css-custom/typography.css">
+    <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory'); ?>/css-custom/clearstyle.css">
+    <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory'); ?>/css-custom/reader.css">
+    <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory'); ?>/css-custom/typography.css">
     <!-- typography -->
     <link rel="stylesheet" href="https://use.typekit.net/lha0tgs.css">
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -33,7 +33,7 @@
         <span class='byline'>By <a target='_blank' href='http://www.newschoolfreepress.com/author/hoffl664/'>Lauren Hoffman</a></span>
       </div>
       <div class="imgwrap-large">
-        <img src="assets-custom/chelsea-illo.jpg" alt="Illustration by Chelsea Sarabia">
+        <img src="<?php echo get_bloginfo('template_directory'); ?>/assets-custom/chelsea-illo.jpg" alt="Illustration by Chelsea Sarabia">
         <span>Illustration by <a target='_blank' href='http://www.newschoolfreepress.com/author/sarac842/'>Chelsea Sarabia</a></span>
       </div>
       <p>College scholars and faculty across the country went on strike in September in an effort to draw attention to racial injustice and police violence in classrooms.</p>
@@ -71,7 +71,7 @@
         </div>
       </div>
       <div class="imgwrap-large article2">
-        <img src="assets-custom/tns-layoff.jpg" alt="Illustration by Ana Rodriguez">
+        <img src="<?php echo get_bloginfo('template_directory'); ?>/assets-custom/tns-layoff.jpg" alt="Illustration by Ana Rodriguez">
         <span>Illustration by <a target='_blank' href='http://www.newschoolfreepress.com/2020/10/01/the-new-school-beyond-austerity/'>Ana Rodriguez</a></span>
       </div>
         <p class='article2'>The New School is an institution in pain and turmoil.&nbsp; Faculty and staff have already experienced pay cuts, the suspension of retirement contributions, and frozen research funds. Library subscriptions are being slashed. Course offerings have been reduced. More dramatically, approximately 13% of the administrative staff are expected to be fired by the end of the week, as announced in an email from the President and Chair of the Board of Trustees on Oct. 1.</p>
@@ -84,7 +84,7 @@
         <p class='article2'>An <a href="https://books.google.com/books/about/Never_Let_a_Serious_Crisis_Go_to_Waste_H.html?id=5mdelx-86jwC">atmosphere of emergency</a> has been used to justify “structural adjustment” in countries around the world, often with little democratic consultation. As someone who has studied those experiences, I know that the actions that were taken in the name of collective salvation were too frequently ill-conceived and even proved counter-productive. What is happening today in the New School is a visceral reminder of such “austerity politics”. If the New School is to live up to its oft-proclaimed values, it must find another path.&nbsp;</p>
         <p class='article2' style='padding-bottom:var(--topmargin)'><span>Editing by <a target='_blank' href='http://www.newschoolfreepress.com/author/lebra816/'>Ayesha Le Breton</a></span></p>
     </div>
-    <script src="js-custom/smoothscroll.min.js"></script>
-    <script src="js-custom/function.js" charset="utf-8"></script>
+    <script src="<?php echo get_bloginfo('template_directory'); ?>/js-custom/smoothscroll.min.js"></script>
+    <script src="<?php echo get_bloginfo('template_directory'); ?>/js-custom/function.js" charset="utf-8"></script>
   </body>
 </html>
