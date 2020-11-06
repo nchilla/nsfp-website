@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <?php
     //page content
-    $thepost=20758;
+    $thepost=20457;
     $thispage=get_post($thepost);
     $thispagejson=json_encode($thispage);
     //subtitle
@@ -11,8 +11,29 @@
 
     // authors
     $authors=get_coauthors($thepost);
-    $authors_json=json_encode($authors);
+    $authordata=array();
 
+    foreach($authors as $a){
+      array_push($authordata,new stdClass());
+      end($authordata);
+      $k=$authordata[key($authordata)];
+      $k->name=$a->data->display_name;
+      $k->url=get_author_posts_url($a->ID);
+    }
+    $byline="By";
+    $length=count($authordata);
+    foreach($authordata as $i=>$d){
+      $name=$d->name;
+      $url=$d->url;
+      if($i==$length-1){
+        $byline .= " and";
+      };
+      $byline .= " <a target=\"blank\" href=\"$url\">$name</a>";
+      if($i!=$length-1 && $length>2){
+        $byline .= ",";
+      };
+    }
+    $authors_json=json_encode($authordata);
     //date
     $date=get_the_date("",$thepost);
     $datejson=json_encode($date);
@@ -69,7 +90,7 @@
         <h1><?php echo $thispage->post_title; ?></h1>
         <h2><?php echo $subtitle; ?></h2>
         <span class='date'><?php echo $date ?></span><br>
-        <span class='byline'><?php if ( function_exists( ‘coauthors’ ) ) { get_coauthors(); } else { the_author(); } ?></span>
+        <span class='byline'><?php echo $byline ?></span>
       </div>
       <div class="imgwrap-large">
         <?php echo $imagehtml; ?>

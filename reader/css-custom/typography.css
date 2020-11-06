@@ -28,7 +28,7 @@ h3{
   line-height: 2.2rem;
 }
 
-span{
+span,figcaption{
   font-family: anonymous-pro, monospace;
   font-weight: 400;
   font-style: normal;

@@ -118,7 +118,17 @@ body{
   width:100%;
 }
 
-
+.content-wrap > figure{
+  background-color: var(--background);
+  grid-column: 5 / 11;
+  padding-bottom:30px;
+}
+figure img{
+  width:100%;
+}
+figure ul{
+  margin-bottom:10px;
+}
 /* lede-specific stuff ----------*/
 
 .lede-wrap{
