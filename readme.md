@@ -10,9 +10,18 @@ The live blog is, well, live [here](https://www.newschoolfreepress.com/covid-19/
 
 ## Notes:
 
+### Wordpress plugins that will break the site if deactivated
+
+**Advanced Custom Fields** is used to fetch data for the Live Blog updates and other posts.
+
+**Co-Authors Plus** is self explanatory. It is used in the new post template's php gets. Look for `get_coauthors($thepost);`
+
+**Really Simple SSL** is self explanatory.
+
+
 ### The Live Blog
 
-The live blog is built as a custom single page (page-19929.php) in Wordpress. It has three sections, which our edited in different areas:
+The live blog is built as a custom single page (page-19929.php) in Wordpress. It has three sections, which are edited in different areas:
 
 **Live Updates** uses a custom post type added through functions.php. Look for the `create_post_wp_covid()` and `add_action( 'init', 'create_post_wp_covid' );` functions.
 
