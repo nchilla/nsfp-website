@@ -18,7 +18,7 @@ The live blog is, well, live [here](https://www.newschoolfreepress.com/covid-19/
 
 **Really Simple SSL** is self explanatory.
 
-
+---
 ### The Live Blog
 
 The live blog is built as a custom single page (page-19929.php) in Wordpress. It has three sections, which are edited in different areas:
@@ -30,3 +30,5 @@ The live blog is built as a custom single page (page-19929.php) in Wordpress. It
 **Resources** pull directly from the Live Blog page content editor in Pages
 
 For more information about the design and purpose of these sections, see this [design concept document](https://paper.dropbox.com/doc/NSFP-COVID-19-Custom-Page--A~2Y4ml62KtQQF~Mst31JIh3AQ-TQUIl3GJhBi875GUSnrvR).
+
+---
