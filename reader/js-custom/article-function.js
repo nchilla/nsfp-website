@@ -1,9 +1,33 @@
-function startUp(){
+let imgCounter=1;
 
+
+logoCheck();
+function startUp(){
   logoScrollDemo();
+  firstArticle();
   // pullQuoteDemo();
   // readNewPieceDemo();
 }
+
+function firstArticle(){
+  var contentwrap=document.querySelector('.content-wrap');
+  contentwrap.childNodes.forEach((item, i) => {
+    if(item.dataset!==undefined){
+      item.dataset.post=thispage["ID"];
+      let imgnow=imgdata[imgCounter];
+      if(item.classList.contains('wp-block-image')&&(imgnow.user!==null||imgnow.cont!==null)){
+        let cap=imgnow.cap!==null?imgnow.cap:'';
+        let credit=imgnow.user!==false?imgnow.user.name:imgnow.cont;
+        let creditlink=imgnow.user!==false?imgnow.user.link:imgnow.contlink;
+        let linkhtml=(creditlink!==null||creditlink!=='')?`<a href="${creditlink}">${credit}</a>`:`${credit}`;
+        let string=`${cap} ${imgnow.mediatypa} ${linkhtml}`;
+        item.querySelector('figcaption').innerHTML=string;
+        imgCounter++;
+      }
+    }
+  });
+}
+
 
 
 
@@ -26,11 +50,7 @@ function pullQuoteDemo(){
 
 function logoScrollDemo(){
   window.addEventListener('scroll',function(e){
-    if(window.scrollY>100){
-      document.querySelector('#logo').style.left='-300px';
-    }else{
-      document.querySelector('#logo').style.left='0px';
-    }
+    logoCheck();
   })
 }
 
@@ -58,6 +78,13 @@ function readNewPieceDemo(){
   })
 }
 
+function logoCheck(){
+  if(window.scrollY>100){
+    document.querySelector('#logo').style.left='-300px';
+  }else{
+    document.querySelector('#logo').style.left='0px';
+  }
+}
 
 
 window.addEventListener('load',startUp);

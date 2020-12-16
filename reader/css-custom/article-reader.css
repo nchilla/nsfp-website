@@ -5,6 +5,7 @@
   --topmargin:120px;
   --background:white;
   --content-column:100px;
+  --maincontent:5/11;
 }
 
 /* overall page structure ------------*/
@@ -29,6 +30,8 @@ body{
 }
 
 .content-wrap{
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
   pointer-events: none;
   overflow: visible;
   position:absolute;
@@ -88,10 +91,13 @@ body{
   position:sticky;
   top:100px; */
 }
-.content-wrap > p{
+.content-wrap > p, ol{
   transition: background-color 0.5s;
 }
-.content-wrap > p, blockquote{
+
+
+
+.content-wrap > p, ol, blockquote{
   z-index:200;
   position:relative;
 
@@ -104,9 +110,9 @@ body{
   cursor:pointer;
 }
 
-.content-wrap > .content-zone,p, blockquote{
+.content-wrap > .content-zone,p,ol,blockquote{
   background-color: var(--background);
-  grid-column: 5 / 11;
+  grid-column: var(--maincontent);
 }
 
 .imgwrap-large{
@@ -118,17 +124,24 @@ body{
   width:100%;
 }
 
-.content-wrap > figure{
+.content-wrap > figure,.wp-block-image{
   background-color: var(--background);
-  grid-column: 5 / 11;
+  grid-column: var(--maincontent);
   padding-bottom:30px;
+  pointer-events: all;
 }
+
 figure img{
   width:100%;
 }
 figure ul{
   margin-bottom:10px;
 }
+
+figcaption{
+  margin-top:10px;
+}
+
 /* lede-specific stuff ----------*/
 
 .lede-wrap{
@@ -138,12 +151,12 @@ figure ul{
   z-index:-5;
   margin-top:var(--topmargin);
 }
-.opinion-test{
+.opinion-tag{
   position:relative;
   margin-bottom: 2px;
   display: inline-block;
 }
-/* .opinion-test h1{
+/* .opinion-tag h1{
   display:inline;
   position:absolute;
   left:-25px;
@@ -179,6 +192,10 @@ figure ul{
   border-radius: 40%;
 }
 
+.imgwrap-large img{
+  margin-bottom:10px;
+}
+
 
 
 /* breakpoints -------*/
@@ -186,17 +203,15 @@ figure ul{
 @media(max-width:800px){
   :root{
     --content-column:minmax(0, 1fr);
+    --maincontent:2 / 14;
   }
-  .content-wrap > .content-zone,p, blockquote{
+  .content-wrap > .content-zone,p,ol, blockquote{
     background-color: var(--background);
-    grid-column: 2 / 14;
+    /* grid-column: 2 / 14; */
   }
   .imgwrap-large{
     grid-column: 1 / 15;
     padding-bottom: 20px;
-  }
-  .imgwrap-large img{
-    margin-bottom:10px;
   }
   .imgwrap-large span{
     margin-left:calc(var(--omargin) + 10px);
@@ -213,11 +228,11 @@ figure ul{
     --topmargin:100px;
     --omargin:10px;
   }
-  /* .opinion-test h1{
+  /* .opinion-tag h1{
     left:0px;
     top:-6px;
   } */
-  /* .opinion-test{
+  /* .opinion-tag{
     padding-left:20px;
   } */
   #logo{
