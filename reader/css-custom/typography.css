@@ -20,12 +20,17 @@ h2{
   margin-bottom:calc(var(--spacer) * 2);
 }
 
-h3{
+
+h3#logo{
   font-family: halyard-micro, sans-serif;
   font-weight: 800;
   font-style: normal;
   font-size: 2.2rem;
   line-height: 2.2rem;
+}
+h3#logo a{
+  border-bottom: 0px;
+  padding-bottom: 0px;
 }
 
 span,figcaption{
@@ -42,9 +47,17 @@ a{
 }
 p,ol{
   font-family: 'PT Serif', serif;
+}
+p,ol,h3:not(#logo){
   font-weight: 400;
   font-size: 1.9rem;
   line-height: 33px;
+}
+
+h3:not(#logo){
+  font-family: halyard-text, sans-serif;
+  font-weight: 600;
+  padding-top: 20px;
 }
 
 ol{
@@ -59,6 +72,9 @@ p strong, ol strong{
 p em, ol em{
   font-style: italic;
 }
+
+
+
 
 
 blockquote span , blockquote p{
@@ -103,7 +119,7 @@ blockquote span , blockquote p{
     font-size: 1.5rem;
     line-height: 2.2rem;
   }
-  p{
+  p,h3:not(#logo),ol{
     font-size: 1.7rem;
     line-height: 2.8rem;
   }
@@ -113,7 +129,7 @@ blockquote span , blockquote p{
 }
 
 @media(max-width:600px){
-  h3{
+  h3#logo{
     font-size:2rem;
     line-height: 1.9rem;
   }

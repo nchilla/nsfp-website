@@ -164,6 +164,9 @@ h4{
   display:block;
 }
 
+#updates a{
+  display:inline;
+}
 a{
   color:black;
   text-decoration: underline;

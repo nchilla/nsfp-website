@@ -15,13 +15,18 @@ function firstArticle(){
     if(item.dataset!==undefined){
       item.dataset.post=thispage["ID"];
       let imgnow=imgdata[imgCounter];
-      if(item.classList.contains('wp-block-image')&&(imgnow.user!==null||imgnow.cont!==null)){
+      if(item.classList.contains('wp-block-image')&&(imgnow.user!==false||imgnow.cont!==null)){
+        console.log(imgnow.user,imgnow.cont);
         let cap=imgnow.cap!==null?imgnow.cap:'';
         let credit=imgnow.user!==false?imgnow.user.name:imgnow.cont;
         let creditlink=imgnow.user!==false?imgnow.user.link:imgnow.contlink;
-        let linkhtml=(creditlink!==null||creditlink!=='')?`<a href="${creditlink}">${credit}</a>`:`${credit}`;
-        let string=`${cap} ${imgnow.mediatypa} ${linkhtml}`;
-        item.querySelector('figcaption').innerHTML=string;
+        let linkhtml=(creditlink!==null&&creditlink!=='')?`<a href="${creditlink}">${credit}</a>`:`${credit}`;
+        let string=`${cap} <span class="attribution">${imgnow.mediatypa} ${linkhtml}</span>`;
+        let figcaption=item.querySelector('figcaption')
+        if(figcaption!==null){
+          figcaption.innerHTML=string;
+        }
+
         imgCounter++;
       }
     }

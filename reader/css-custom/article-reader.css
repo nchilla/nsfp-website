@@ -62,6 +62,7 @@ body{
   vertical-align: top;
   margin-left:5px;
   margin-top:3px;
+  pointer-events: all;
 }
 
 .hamburger{
@@ -97,7 +98,7 @@ body{
 
 
 
-.content-wrap > p, ol, blockquote{
+.content-wrap > p, ol,hr, blockquote,h3:not(#logo){
   z-index:200;
   position:relative;
 
@@ -110,7 +111,7 @@ body{
   cursor:pointer;
 }
 
-.content-wrap > .content-zone,p,ol,blockquote{
+.content-wrap > .content-zone,p,ol,hr,blockquote,h3:not(#logo){
   background-color: var(--background);
   grid-column: var(--maincontent);
 }
@@ -140,6 +141,9 @@ figure ul{
 
 figcaption{
   margin-top:10px;
+}
+.attribution{
+  display: inline-block;
 }
 
 /* lede-specific stuff ----------*/
@@ -196,6 +200,16 @@ figcaption{
   margin-bottom:10px;
 }
 
+hr::before{
+  content: "\a0";
+  display: block;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+hr{
+  border: 0px;
+  margin:0px;
+  height:30px;
+}
 
 
 /* breakpoints -------*/
@@ -205,7 +219,7 @@ figcaption{
     --content-column:minmax(0, 1fr);
     --maincontent:2 / 14;
   }
-  .content-wrap > .content-zone,p,ol, blockquote{
+  .content-wrap > .content-zone,p,ol,hr,blockquote,h3:not(#logo){
     background-color: var(--background);
     /* grid-column: 2 / 14; */
   }

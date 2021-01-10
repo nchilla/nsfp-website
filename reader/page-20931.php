@@ -134,7 +134,7 @@
             <line class="line" x1="0%" x2="100%" y1="99%" y2="99%"></line>
           </svg>
         </div>
-        <h3 id='logo'>THE NEW SCHOOL<br>FREE PRESS</h3>
+        <h3 id='logo' class="noselect"><a href="/">THE NEW SCHOOL<br>FREE PRESS</a></h3>
       </div>
     </div>
     </div>
@@ -156,12 +156,14 @@
           $cap=$imgdata[0]->cap!==null?$imgdata[0]->cap:"";
           $credit=$imgdata[0]->user!==false?$imgdata[0]->user->name:$imgdata[0]->cont;
           $creditlink=$imgdata[0]->user!==false?$imgdata[0]->user->link:$imgdata[0]->contlink;
-          $linkhtml=($creditlink!==null||$creditlink!=='')?"<a href=\"$creditlink\">$credit</a>":$credit;
+          $linkhtml=($creditlink!==null&&$creditlink!=='')?"<a href=\"$creditlink\">$credit</a>":$credit;
           $mediatypa=$imgdata[0]->mediatypa;
-          $string="$cap $mediatypa $linkhtml";
+          $string=$cap." <span class='attribution'>".$mediatypa." ".$linkhtml."</span>";
         ?>
         <span><?php echo $string ?></span>
-        <?php } ?>
+      <?php }else{
+        echo "<span>".wp_get_attachment_caption($thumbID)."</span>";
+        } ?>
       </div>
       <?php echo $thispage->post_content;?>
     </div>
