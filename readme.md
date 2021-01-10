@@ -32,4 +32,4 @@ The live blog is built as a custom single page (page-19929.php) in Wordpress. It
 For more information about the design and purpose of these sections, see this [design concept document](https://paper.dropbox.com/doc/NSFP-COVID-19-Custom-Page--A~2Y4ml62KtQQF~Mst31JIh3AQ-TQUIl3GJhBi875GUSnrvR).
 
 **Some development gotchas for future custom pages:**
-* When you push to the server using FTP, you need to upload the custom single page in the `mobile` folder of the theme as well as the overall theme folder, because this theme uses a completely different theme for mobile (I agree, it's silly).
+* When you push to the server using FTP, you need to upload the custom single page in the `mobile` folder of the theme as well as the overall theme folder, because this theme uses a completely different template for mobile (I agree, it's silly).
